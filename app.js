@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const app = express(); 
 const bcrypt = require('bcrypt'); // for hashing passwords
 
-
+// Reference: https://www.youtube.com/watch?v=-RCnNyD0L-s
 // mysql database 
 var authCon = mysql.createConnection({
     host: "192.168.1.71",
