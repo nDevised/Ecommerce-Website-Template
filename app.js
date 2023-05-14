@@ -3,6 +3,14 @@ const mysql = require('mysql');
 const app = express(); 
 const bcrypt = require('bcrypt'); // for hashing passwords
 
+function isValidEmail(email) {
+    // Regular expression pattern for email validation
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    // Test the email against the regular expression
+    return emailRegex.test(email);
+  }
+
 // Reference: https://www.youtube.com/watch?v=-RCnNyD0L-s
 // mysql database 
 var authCon = mysql.createConnection({
@@ -47,12 +55,12 @@ app.listen(3000, () => console.log('Server ready'));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended: false})); // allows us to access the data from the form in the request variable
 app.get('/', (req, res) => {
-    res.render("index.ejs", {name: "John Doe"});
+    res.render("index.ejs");
 });
 
 app.get('/login', async (req, res) => {
 
-    res.render("login.ejs");
+    res.render("login.ejs", {name: "sign in"});
 });
 
 app.get('/signup', async (req, res) => {
@@ -66,28 +74,66 @@ app.post('/signup', async (req, res) => {
     const fname = req.body.fname;
     const lname = req.body.lname;   
 
-    try{
-        const hashedPassword = await bcrypt.hash(password, 10);
+    if(isValidEmail(email) == true) {
+        console.log("Valid email");
+
+        try{
+            const hashedPassword = await bcrypt.hash(password, 10);
+            authCon.query(`SELECT * FROM auth WHERE email = ?`, [email], async function (err, result) {
+                if (err) throw err;
+                if (result.length > 0) {
+                    res.send("Email already exists in database");
+                } else {
+                    // Insert email and password into auth table
+                    authCon.query(`INSERT INTO auth (email, password) VALUES (?, ?)`, [email, hashedPassword], function (err, result) {
+                        if (err) throw err;
+                    });
+                    // Insert email, first name, and last name into info table
+                    authCon.query(`INSERT INTO info (email, firstname, lastname) VALUES (?, ?, ?)`, [email, fname, lname], function (err, result) {
+                        if (err) throw err;
+                    });
+                    res.redirect('/login');
+
+                }
+            });
+        
+        } catch {
+            res.redirect('/signup');
+        }
+    } else {
+        console.log("Invalid email");
+        res.send("Invalid email");
+    }
+
+});
+
+app.post('/login', async (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password; 
+    if(isValidEmail(email) == true) {
+        console.log("Valid email");
+
         authCon.query(`SELECT * FROM auth WHERE email = ?`, [email], async function (err, result) {
             if (err) throw err;
             if (result.length > 0) {
-                res.send("Email already exists in database");
+                const hashedPassword = result[0].password;
+                if (await bcrypt.compare(password, hashedPassword)) {
+                    // get the name of the email from the info table
+                    authCon.query(`SELECT firstname FROM info WHERE email = ?`, [email], function (err, result) {
+                        if (err) throw err;
+                        if (result.length > 0) {
+                            const name = result[0].firstname;
+                            res.render("index.ejs", {name: name});
+                        } });
+                } else {
+                    res.send("Incorrect password");
+                }
             } else {
-                // Insert email and password into auth table
-                authCon.query(`INSERT INTO auth (email, password) VALUES (?, ?)`, [email, hashedPassword], function (err, result) {
-                    if (err) throw err;
-                });
-                // Insert email, first name, and last name into info table
-                authCon.query(`INSERT INTO info (email, firstname, lastname) VALUES (?, ?, ?)`, [email, fname, lname], function (err, result) {
-                    if (err) throw err;
-                });
-                res.redirect('/login');
-
+                res.send("Email does not exist in database");
             }
         });
-    
-    } catch {
-        res.redirect('/signup');
+    } else {
+        console.log("Invalid email");
+        res.send("Invalid email");
     }
-
 });
