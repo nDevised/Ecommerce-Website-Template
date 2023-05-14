@@ -55,12 +55,12 @@ app.listen(3000, () => console.log('Server ready'));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended: false})); // allows us to access the data from the form in the request variable
 app.get('/', (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", {name: "sign in"});
 });
 
 app.get('/login', async (req, res) => {
 
-    res.render("login.ejs", {name: "sign in"});
+    res.render("login.ejs");
 });
 
 app.get('/signup', async (req, res) => {
