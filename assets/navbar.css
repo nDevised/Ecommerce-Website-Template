@@ -1,0 +1,50 @@
+.nav-bar{
+    /* make the navbar white, fixed to the top, and have a bottom border */
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links{
+    margin-right : 30px;
+}
+
+.nav-bar .nav-links .nav-button{
+    margin-left: 10px;
+    /* make the buttons have no background, no border, and black text */
+    background-color: transparent;
+    border: none;
+    color: black;
+    padding-left: 10px;   
+    padding-right: 10px;   
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.nav-bar .nav-links .nav-button:hover{
+    /* make the buttons have no background, no border, and black text */
+    background-color: black;
+    border: black;
+    color: white;
+    /* make the buttons have a transition of 0.5 seconds */
+    transition: 0.5s;
+    /*make the boarder pillshaped*/
+    border-radius: 20px;
+}
+
+
+.logo{
+    /* make the logo have a max width of 100px */
+    max-width: 100px;   
+}
+
+.cart{
+    /* make the cart have a max width of 50px */
+    max-width: 25px;
+    margin-left: 20px;
+}
