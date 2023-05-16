@@ -48,3 +48,21 @@
     max-width: 25px;
     margin-left: 20px;
 }
+
+.drop-down{
+    /* make the drop down span the navbar width */
+    width: 100%;
+    /* make the drop down have white backround and black text */
+    background-color: white;
+    color: black;
+    /* make the drop down have a transition of 0.5 seconds */
+    transition: 0.5s;
+    /* make the drop down have a z-index of 2 */
+    z-index: 2;
+    /* make the drop down have a position of absolute */
+    position: absolute;
+    /* make the drop down have a top of 100% */
+    top: 100%;
+    /* make the drop down have a left of 0 */
+    left: 0;
+}
