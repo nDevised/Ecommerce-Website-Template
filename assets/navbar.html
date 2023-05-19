@@ -30,19 +30,17 @@
             <table class = "prod-dropdown" id="accessdrop" hidden>
                 <!-- Products will be loaded here from database-->
             </table>
-            <button class="nav-button" id="accbtn"><b>Account</b></button>
-            <table class = "acc-dropdown" id="accdrop" hidden>
-                <tr>
-                    <td><a href = "/login">Login</a></td>
-                </tr>
-                <tr>
-                    <td><a href = "/signup">Signup</a></td>
-                </tr>
-                <tr>
-                    <td><a href = "/logout">Logout</a></td>
-                </tr>
-
         </ul>
-        <image src="./images/cart.png" alt="cart" class="cart">
+        <a href = "/cart">
+            <image src="./images/cart.png" alt="cart" class="cart">
+        </a>
+        <button class="acc-btn" id="accbtn">
+            <img src = "./images/account.png" alt = "account" class = "account-img" height = 25px></img>
+            <ul class = "acc-dropdown" id="accdrop" hidden>
+                <li><a class = "acc-drop-link" href = "/login">Login</a></li>
+                <li><a class = "acc-drop-link" href = "/signup">Signup</a></li>
+                <li><a class = "acc-drop-link" href = "/logout">Logout</a></li>
+            </ul>
+        </button>
 
     </div>

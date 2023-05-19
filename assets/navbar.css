@@ -66,3 +66,55 @@
     /* make the drop down have a left of 0 */
     left: 0;
 }
+
+.acc-btn{
+    /* make the account button have no background, no border, and black text */
+    background-color: transparent;
+    border: none;
+    margin-left: 20px;
+    width: 70px;   
+
+}
+
+.acc-dropdown{
+    /* as soon as the dropdown opens up, add a dark tint to the rest of the page */
+    background-color: white;
+    /* make the drop down have a transition of 0.5 seconds */
+    transition: 0.5s;
+    /* make the drop down have a z-index of 2 */
+    z-index: 2;
+    /* make the drop down have a position of absolute */
+    position: absolute;
+    /*add a border to the dropdown*/
+    border : 2px solid black;
+    list-style-type: none;  
+    margin: 0;
+    padding: 0% ;
+    border-radius: 10px;
+
+}
+
+.acc-drop-link{
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+
+}
+
+.acc-drop-link:hover{
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+
+.acc-btn:hover .acc-dropdown{
+    /* make the drop down show up*/
+    display: block;
+
+
+}
+
+.acc-dropdown:hover{
+    display: block;
+}
