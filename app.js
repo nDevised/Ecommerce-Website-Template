@@ -14,7 +14,7 @@ function isValidEmail(email) {
 // Reference: https://www.youtube.com/watch?v=-RCnNyD0L-s
 // mysql database 
 var authCon = mysql.createConnection({
-    host: "192.168.1.71",
+    host: "192.168.1.79",
     user: "root",
     password: "password",
     database: "authDB"
@@ -55,7 +55,7 @@ app.listen(3000, () => console.log('Server ready'));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended: false})); // allows us to access the data from the form in the request variable
 app.get('/', (req, res) => {
-    res.render("index.ejs", {name: "sign in"});
+    res.render("index.ejs");
 });
 
 app.get('/login', async (req, res) => {
@@ -123,7 +123,7 @@ app.post('/login', async (req, res) => {
                         if (err) throw err;
                         if (result.length > 0) {
                             const name = result[0].firstname;
-                            res.render("index.ejs", {name: name});
+                            res.render("index.ejs");
                         } });
                 } else {
                     res.send("Incorrect password");
