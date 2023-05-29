@@ -1,12 +1,3 @@
-fetch('navbar.html')
-.then(res => res.text())
-.then(text => {
-    let oldelem = document.querySelector("script#replace_with_navbar");
-    let newelem = document.createElement("div");
-    newelem.innerHTML = text;
-    oldelem.parentNode.replaceChild(newelem,oldelem);
-})
-
 // this function takes in a list of products and adds them to the products drop down menu
 // there are 5 products per row in the drop down menu table and a new row is made if this limit is reached
 // the list has a hashmap which has the keys PID, name, and thumbnail_img_location

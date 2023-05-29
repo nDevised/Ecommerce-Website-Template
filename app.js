@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql');
 const app = express(); 
 const bcrypt = require('bcrypt'); // for hashing passwords
-
+app.use(express.static('public'))
 function isValidEmail(email) {
     // Regular expression pattern for email validation
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -18,6 +18,13 @@ var authCon = mysql.createConnection({
     user: "root",
     password: "password",
     database: "authDB"
+  });
+
+  var prodCon = mysql.createConnection({
+    host: "192.168.1.79",
+    user: "root",
+    password: "password",
+    database: "productdb"
   });
 
   function initAuthDB() {
@@ -49,7 +56,23 @@ var authCon = mysql.createConnection({
     });
   }
 
+
+function initProductDB() {
+prodCon.query(`
+    CREATE TABLE IF NOT EXISTS products (
+        id INT NOT NULL,
+        name VARCHAR(45) NOT NULL,
+        price FLOAT NOT NULL,
+        sale_price FLOAT NOT NULL,
+        thumbnail_img_loc VARCHAR(45) NOT NULL,
+        PRIMARY KEY (id));
+    `, function (err, result) {
+    if (err) throw err;
+    });
+}   // end of initProductDB
+
 initAuthDB();
+initProductDB();
 
 app.listen(3000, () => console.log('Server ready'));
 app.set("view engine", "ejs");
@@ -62,6 +85,12 @@ app.get('/login', async (req, res) => {
 
     res.render("login.ejs");
 });
+
+app.get('/navbar', async (req, res) => {
+
+    res.render("assets/navbar.ejs");
+});
+
 
 app.get('/signup', async (req, res) => {
 
