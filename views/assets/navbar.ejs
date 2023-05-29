@@ -1,6 +1,7 @@
 
 <body>
     <link rel="stylesheet" href="/css/navbar.css">
+    <script>"/js/navbar.js"</script>       
     <div class="nav-bar" id="navbar">
 
         <image src="/images/logo.png" alt="logo" class="logo">
@@ -8,8 +9,9 @@
 
             <button class="nav-button" id="homebtn"><b>Home</b></button>
             <button class="nav-button" id="prodbtn"><b>Products</b></button>
-            <table class = "prod-dropdown" id="proddrop" hidden>
-                <!-- Products will be loaded here from database ( 5 products per row )-->                        
+            <table class = "prod-dropdown" id="proddrop">
+                <!-- Products will be loaded here from database ( 5 products per row )--> 
+                <script>populateDropdown(products)</script>
             </table>
             <button class="nav-button" id="abtbtn"><b>About</b></button>
         </ul>

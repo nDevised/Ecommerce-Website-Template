@@ -88,7 +88,17 @@ app.get('/login', async (req, res) => {
 
 app.get('/navbar', async (req, res) => {
 
-    res.render("assets/navbar.ejs");
+    try{
+        const query = 'SELECT id, name, thumbnail_img_loc FROM products';
+        prodCon.query(query, (error, results) => {
+            if (error) throw error;
+            res.render("assets/navbar.ejs", {products: results});
+        });
+    }catch{
+        console.error('Error fetching product data:', error);
+        res.status(500).send('Internal Server Error');
+    }
+
 });
 
 
