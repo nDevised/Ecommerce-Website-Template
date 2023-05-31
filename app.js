@@ -92,7 +92,11 @@ app.get('/navbar', async (req, res) => {
         const query = 'SELECT id, name, thumbnail_img_loc FROM products';
         prodCon.query(query, (error, results) => {
             if (error) throw error;
-            res.render("assets/navbar.ejs", {products: results});
+            // prod = []
+            // for (var i = 0; i < results.length; i++) {
+            //     prod.push(results[i]);
+            // }
+            res.render("assets/navbar.ejs", {products: JSON.stringify(results)});
         });
     }catch{
         console.error('Error fetching product data:', error);
