@@ -76,45 +76,41 @@
 
 }
 
-.acc-dropdown{
-    /* as soon as the dropdown opens up, add a dark tint to the rest of the page */
-    background-color: white;
-    /* make the drop down have a transition of 0.5 seconds */
-    transition: 0.5s;
-    /* make the drop down have a z-index of 2 */
-    z-index: 2;
-    /* make the drop down have a position of absolute */
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .drop-down {
     position: absolute;
-    /*add a border to the dropdown*/
-    border : 2px solid black;
-    list-style-type: none;  
-    margin: 0;
-    padding: 0% ;
+    border: 2px solid black;
     border-radius: 10px;
+    opacity: 0;
+    display: none;
+    animation: fade-in 0.5s ease forwards; /* Apply the fade-in animation */
+  }
+  
+  .nav-button:hover > .drop-down,
+  .drop-down:hover {
+    display: block;
+  }
+  
 
-}
-
-.acc-drop-link{
-    color: black;
-    text-decoration: none;
+  .acc-btn:hover > .drop-down,
+  .drop-down:hover {
+    opacity: 1;
+    display: block;
+  }
+  .drop-down td {
     padding: 10px;
-
-}
-
-.acc-drop-link:hover{
-    color: white;
-    background-color: black;
-    border-radius: 10px;
-}
-
-
-.acc-btn:hover .acc-dropdown{
-    /* make the drop down show up*/
-    display: block;
-
-
-}
-
-.acc-dropdown:hover{
-    display: block;
-}
+  }
+  
+  .drop-down td:hover {
+    border: 2px solid black;
+  }
+  
+  
