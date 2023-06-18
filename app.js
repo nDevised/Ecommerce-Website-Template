@@ -14,14 +14,14 @@ function isValidEmail(email) {
 // Reference: https://www.youtube.com/watch?v=-RCnNyD0L-s
 // mysql database 
 var authCon = mysql.createConnection({
-    host: "192.168.1.79",
+    host: "192.168.50.79",
     user: "root",
     password: "password",
     database: "authDB"
   });
 
   var prodCon = mysql.createConnection({
-    host: "192.168.1.79",
+    host: "192.168.50.79",
     user: "root",
     password: "password",
     database: "productdb"
