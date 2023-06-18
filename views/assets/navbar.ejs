@@ -59,11 +59,16 @@
         <ul class = "nav-links">
 
             <button class="nav-button" id="homebtn"><b>Home</b></button>
-            <button class="nav-button" id="prodbtn"><b>Products</b>
-                <table class = "drop-down" id="proddrop">
-                    <!-- Products will be loaded here from database ( 5 products per row )--> 
-                </table>
-            </button>
+            <div class="dropdown">
+                <button class="nav-button" id="prodbtn"><b>Products</b>
+
+                        <table class = "dropdown-menu" id="proddrop">
+                            <!-- Products will be loaded here from database ( 5 products per row )--> 
+                        </table>
+
+
+                </button>
+            </div>
             <script>
                 console.log(JSON.parse('<%- products %>'));
                 populateDropdown(JSON.parse('<%- products %>'))</script>
@@ -72,14 +77,16 @@
         <a href = "/cart">
             <image src="/images/cart.png" alt="cart" class="cart">
         </a>
-        <button class="acc-btn" id="accbtn">
-            <img src = "/images/account.png" alt = "account" class = "account-img" height = 25px></img>
-            <ul class = "drop-down" id="accdrop">
-                <li><a class = "acc-drop-link" href = "/login">Login</a></li>
-                <li><a class = "acc-drop-link" href = "/signup">Signup</a></li>
-                <li><a class = "acc-drop-link" href = "/logout">Logout</a></li>
-            </ul>
-        </button>
+        <div class="dropdown">
+            <button class="acc-btn" id="accbtn">
+                <img src = "/images/account.png" alt = "account" class = "account-img" height = 25px></img>
+                <ul class = "drop-down" id="accdrop">
+                    <li><a class = "acc-drop-link" href = "/login">Login</a></li>
+                    <li><a class = "acc-drop-link" href = "/signup">Signup</a></li>
+                    <li><a class = "acc-drop-link" href = "/logout">Logout</a></li>
+                </ul>
+            </button>
+        </div>  
 
     </div>
 </body>
