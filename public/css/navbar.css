@@ -1,54 +1,46 @@
-.nav-bar{
-    /* make the navbar white, fixed to the top, and have a bottom border */
-    background-color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.navbar{
+  background-color: rgb(43, 43, 43);
+  display:flex;
+  align-items: center;  
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
 }
 
-.nav-links{
-    margin-right : 30px;
+body{
+  margin: 0px;
 }
 
-.nav-bar .nav-links .nav-button{
-    margin-left: 10px;
-    /* make the buttons have no background, no border, and black text */
-    background-color: transparent;
-    border: none;
-    color: black;
-    padding-left: 10px;   
-    padding-right: 10px;   
-    padding-top: 5px;
-    padding-bottom: 5px;
+.link{
+  background:none;
+  border:none;
+  text-decoration: none;
+  padding: 0;
+  color: white;
+  font-family:sans-serif;
+
 }
 
-.nav-bar .nav-links .nav-button:hover{
-    /* make the buttons have no background, no border, and black text */
-    background-color: black;
-    border: black;
-    color: white;
-    /* make the buttons have a transition of 0.5 seconds */
-    transition: 0.5s;
-    /*make the boarder pillshaped*/
-    border-radius: 20px;
+.img-link{
+  background:none;
+  border:none;
+  text-decoration: none;
 }
 
-
-.logo{
-    /* make the logo have a max width of 100px */
-    max-width: 100px;   
+.main-links{
+  display:flex;
+  flex-grow: 1;
+  justify-content: center;
 }
 
-.cart{
-    /* make the cart have a max width of 50px */
-    max-width: 25px;
-    margin-left: 20px;
+.link:hover{
+  color:white;
+  background-color: rgb(206, 34, 34);
 }
 
-.drop-down{
-  position: absolute;
+.nav-txt{
+  display: block;
+  padding: 8px;
 }
