@@ -1,12 +1,16 @@
 .navbar{
   background-color: rgb(43, 43, 43);
   display:flex;
-  align-items: center;  
-  justify-content: space-between;
+  justify-content: center;
   position: fixed;
   top: 0;
   width: 100%;
+  
+}
 
+.nav-content{
+  align-items: center;  
+  display:flex;
 }
 
 body{
@@ -29,10 +33,13 @@ body{
   text-decoration: none;
 }
 
+
+
 .main-links{
   display:flex;
   flex-grow: 1;
   justify-content: center;
+  margin: 0px 300px
 }
 
 .link:hover{
@@ -42,5 +49,6 @@ body{
 
 .nav-txt{
   display: block;
-  padding: 8px;
+  padding: 12px;
 }
+
