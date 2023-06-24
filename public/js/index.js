@@ -1,9 +1,9 @@
 // Assuming you have the following variables defined:
 var imageCount = 3; // The total number of images in the directory
 var captions = { // JSON object containing the image names and corresponding captions
-  "0.png": "First Image Caption",
-  "1.png": "Second Image Caption",
-  "2.png": "THird Image Caption"
+  0: "First Image Caption",
+  1: "Second Image Caption",
+  2: "THird Image Caption"
   // Add more image captions here...
 };
 
@@ -14,7 +14,7 @@ var slideshowContainer = document.querySelector('.slideshow-container');
 for (var i = 0; i < imageCount; i++) {
   var imageNumber = i + 1;
   var imageName = i + '.webp';
-  var caption = captions[imageName] || '';
+  var caption = captions[imageNumber - 1] || '';
 
   // Create the slideshow element
   var slide = document.createElement('div');
@@ -75,9 +75,5 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
 }
