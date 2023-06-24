@@ -47,6 +47,15 @@ for (var i = 0; i < imageCount; i++) {
 let slideIndex = 1;
 showSlides(slideIndex);
 
+// Switch the slide every 5 seconds
+
+
+// Next/previous controls
+function incrementSlide() {
+  showSlides(slideIndex += 1);
+}
+
+
 // Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
