@@ -13,7 +13,7 @@ var slideshowContainer = document.querySelector('.slideshow-container');
 // Iterate over the image files and generate the slideshow elements
 for (var i = 0; i < imageCount; i++) {
   var imageNumber = i + 1;
-  var imageName = i + '.png';
+  var imageName = i + '.webp';
   var caption = captions[imageName] || '';
 
   // Create the slideshow element

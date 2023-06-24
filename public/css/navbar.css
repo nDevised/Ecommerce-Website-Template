@@ -1,11 +1,12 @@
 .navbar{
-  background-color: rgb(43, 43, 43);
+  background-color: white;
   display:flex;
   justify-content: center;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   
 }
 
@@ -23,7 +24,7 @@ body{
   border:none;
   text-decoration: none;
   padding: 0;
-  color: white;
+  color: black;
   font-family:sans-serif;
 
 }
