@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 html {
 	font-size: 10px;
 	font-family: 'Montserrat', sans-serif;
@@ -9,12 +10,14 @@ body{
 }
 
 nav{
-  background-color: rgb(61, 61, 61);
+  background-color: rgb(41, 41, 41);
 }
 
 .navbar-wrapper{
   display: flex;
   margin: 0 auto;
+  align-items: center;
+  justify-content: center;
   
 
   /* change to proper width to prevent navbar from strecthing*/
@@ -24,25 +27,60 @@ nav{
 }
 
 ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.link{
-  border: none;
-  background: none;
+li{ 
+  list-style-type: none;
+}
+
+.nav-link-container{
+  padding-left: 15px;
+  padding-right: 15px;  
+}
+
+.nav-links{
+  font-size: 25px;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  color: #7e7e7e; /* For Example */
+
+}
+
+.nav-links:visited{
+  text-decoration: none;
+  color: #7e7e7e; /* For Example */
 }
 
 .directory-container ul{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+
 }
 .logo{
-  width: 250px;
+  width: 150px;
 }
 .acc-btn{
   border: none;
   background: none;
+}
+
+.btn-img{
+  width: 25px;
+  border-radius: 50px;
+}
+
+.img-btn{
+  border: none;
+  background: none;
+}
+
+.directory-container{
+  padding-left: 30vh;
+  padding-right: 30vh;
+}
+
+.logo-container{
+  margin-left: 10%;
 }
