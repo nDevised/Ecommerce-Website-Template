@@ -4,3 +4,45 @@ html {
 	scroll-behavior: smooth;
 }
 
+body{
+  margin: 0px;
+}
+
+nav{
+  background-color: rgb(61, 61, 61);
+}
+
+.navbar-wrapper{
+  display: flex;
+  margin: 0 auto;
+  
+
+  /* change to proper width to prevent navbar from strecthing*/
+  max-width: 700px;
+
+  padding: 20px 0px 20px 0px
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link{
+  border: none;
+  background: none;
+}
+
+.directory-container ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.logo{
+  width: 250px;
+}
+.signup-btn{
+  border: none;
+  background: none;
+}
