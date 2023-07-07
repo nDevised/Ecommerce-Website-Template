@@ -17,7 +17,7 @@ nav{
   display: flex;
   margin: 0 auto;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   
 
   /* change to proper width to prevent navbar from strecthing*/
@@ -57,9 +57,10 @@ li{
   display: flex;
   flex-direction: row;
 
+
 }
 .logo{
-  width: 150px;
+  max-width: 150px;
 }
 .acc-btn{
   border: none;
@@ -77,10 +78,13 @@ li{
 }
 
 .directory-container{
-  padding-left: 30vh;
-  padding-right: 30vh;
+  padding: 0px 20rem 0px 20rem;
 }
 
 .logo-container{
-  margin-left: 10%;
+
+}
+
+.right-container{
+  display: flex;
 }
