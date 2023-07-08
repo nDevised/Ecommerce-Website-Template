@@ -11,6 +11,7 @@ body{
 
 nav{
   background-color: rgb(41, 41, 41);
+  min-width: 1000px;
 }
 
 .navbar-wrapper{
@@ -25,8 +26,14 @@ nav{
 
 }
 
-.directory-container{
+.prod-text{
+  text-decoration: none;
+  color: #7e7e7e; /* Default color */
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
 }
+
+a{ text-decoration: none !important;}
 
 ul {
   margin: 0;
@@ -122,12 +129,13 @@ li{
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
+  pointer-events: none;
 
 }
 
 .nav-link-container:hover .dropdown{
-
   max-height: 100%;
+  pointer-events: all;
 }
 
 
@@ -140,6 +148,9 @@ li{
   max-width: 300px;
 }
 
+.nav-link-container:hover {
+  font-size: 20px;
+}
 .prod-img{
   max-width: 0px;
   max-height: 0;
