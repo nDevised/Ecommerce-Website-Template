@@ -11,6 +11,7 @@ body{
 
 nav{
   background-color: rgb(41, 41, 41);
+  min-width: 1000px;
 }
 
 .navbar-wrapper{
@@ -50,6 +51,7 @@ li{
   background-size: 0% 2px;
   background-position: 0% 100%;
   transition: background-size 0.3s, color 0.3s;
+  
 }
 
 .nav-links:hover {
@@ -109,4 +111,41 @@ li{
 
 .right-container{
   display: flex;
+}
+
+.dropdown {
+  position: absolute;
+  background-color: rgb(41, 41, 41);
+
+}
+
+
+
+.nav-link-container:hover #proddrop{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Adjust '3' to the desired number of columns */
+  gap: 10px; /* Adjust the gap value as needed */
+  list-style: none;
+  padding: 10px;
+  left: 50%;
+  transform: translate(-50%,5%)
+}
+
+.prod-img{
+  max-width: 300px;
+}
+
+.product-cell{
+  padding: 0px;
+  margin: 0;
+}
+
+#proddrop{
+  display: none;
+
+}
+
+#proddrop li{
+  padding: 0;
+  margin: 0;
 }
