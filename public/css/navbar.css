@@ -123,25 +123,20 @@ li{
   display: flex;
 }
 
-.dropdown {
+.prod-drop {
   position: absolute;
   background-color: rgb(41, 41, 41);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
   pointer-events: none;
-
 }
 
-.nav-link-container:hover .dropdown{
+.nav-link-container:hover .prod-drop{
   max-height: 100%;
   pointer-events: all;
 }
 
-
-.nav-link-container:hover #proddrop{
-
-}
 
 .nav-link-container:hover .prod-img{
   max-height: 100%;
@@ -167,7 +162,6 @@ li{
   grid-template-columns: repeat(4, 1fr); /* Adjust '3' to the desired number of columns */
   left: 50%;
   transform: translate(-50%,4%);
-  overflow: hidden;
   gap: 10px; /* Adjust the gap value as needed */
   list-style: none;
   padding: 10px;
