@@ -11,7 +11,6 @@ body{
 
 nav{
   background-color: rgb(41, 41, 41);
-  min-width: 1000px;
 }
 
 .navbar-wrapper{
@@ -24,7 +23,9 @@ nav{
   /* change to proper width to prevent navbar from strecthing*/
   max-width: 700px;
 
-  padding: 20px 0px 20px 0px
+}
+
+.directory-container{
 }
 
 ul {
@@ -39,6 +40,8 @@ li{
 .nav-link-container{
   padding-left: 15px;
   padding-right: 15px;  
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .nav-links {
@@ -54,7 +57,7 @@ li{
   
 }
 
-.nav-links:hover {
+.nav-link-container:hover .nav-links{
   background-size: 100% 2px;
   color: red;
 }
@@ -116,23 +119,31 @@ li{
 .dropdown {
   position: absolute;
   background-color: rgb(41, 41, 41);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 
 }
 
+.nav-link-container:hover .dropdown{
+
+  max-height: 100%;
+}
 
 
 .nav-link-container:hover #proddrop{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Adjust '3' to the desired number of columns */
-  gap: 10px; /* Adjust the gap value as needed */
-  list-style: none;
-  padding: 10px;
-  left: 50%;
-  transform: translate(-50%,5%)
+
+}
+
+.nav-link-container:hover .prod-img{
+  max-height: 100%;
+  max-width: 300px;
 }
 
 .prod-img{
-  max-width: 300px;
+  max-width: 0px;
+  max-height: 0;
+  transition: all 0.3s ease;
 }
 
 .product-cell{
@@ -141,8 +152,14 @@ li{
 }
 
 #proddrop{
-  display: none;
-
+  display: grid;  
+  grid-template-columns: repeat(4, 1fr); /* Adjust '3' to the desired number of columns */
+  left: 50%;
+  transform: translate(-50%,4%);
+  overflow: hidden;
+  gap: 10px; /* Adjust the gap value as needed */
+  list-style: none;
+  padding: 10px;
 }
 
 #proddrop li{
