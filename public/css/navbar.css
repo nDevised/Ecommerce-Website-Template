@@ -40,25 +40,40 @@ li{
   padding-right: 15px;  
 }
 
-.nav-links{
+.nav-links {
   font-size: 25px;
   font-family: 'Ubuntu', sans-serif;
   text-decoration: none;
-  color: #7e7e7e; /* For Example */
-
+  color: #7e7e7e; /* Default color */
+  background-image: linear-gradient(to right, red 0%, red 0%);
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: 0% 100%;
+  transition: background-size 0.3s, color 0.3s;
 }
 
-.nav-links:visited{
+.nav-links:hover {
+  background-size: 100% 2px;
+  color: red;
+}
+
+.nav-links:visited {
   text-decoration: none;
-  color: #7e7e7e; /* For Example */
+  color: #7e7e7e; /* Default color for visited links */
+}
+
+.nav-links:hover,
+.nav-links:visited:hover {
+  color: red; /* Apply red color when hovered, even for visited links */
 }
 
 .directory-container ul{
   display: flex;
   flex-direction: row;
-
-
 }
+
+
+
 .logo{
   max-width: 150px;
 }
