@@ -192,9 +192,11 @@ li{
   max-height: 1000px;
 }
 
-.img-btn:hover .drop-down li{
-  max-height: 1000px;
+.img-btn:hover .dropdown-txt{
+  visibility: visible;
+  pointer-events: all;
 }
+
 
 #accbtn:hover .acc-img{
   filter: invert(50%);
@@ -205,24 +207,35 @@ li{
   background-color: rgb(41, 41, 41);
   border: 1px solid black;
   max-height: 0;
+  transition: max-height 0.3s ease;
 }
 
 #accdrop{
-  transform: translate(-10px,88px);
+  transform: translate(-25px,27px);
 }
 
 .dropdown-txt{
   font-family: 'Ubuntu', sans-serif;
-  font-size: 25px;
-  color: #7e7e7e;
-
+  visibility: hidden;
+  pointer-events: none;
+  font-size: 20px;
+  transition: visibility 0.1s ease;
 }
 
 .dropdown-txt:visited{
   color: #7e7e7e;
-
 }
 
 .drop-down li{
-  padding: 5px, 20px, 5px, 20px;
+  text-align: center;
+
+}
+
+.drop-down li:hover{
+  background-color: #525252;
+}
+
+
+.drop-down li:hover .dropdown-txt{
+  color:white;
 }
