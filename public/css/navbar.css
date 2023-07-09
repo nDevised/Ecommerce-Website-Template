@@ -115,6 +115,8 @@ li{
 .nav-link-container:hover .prod-drop{
   max-height: 100%;
   pointer-events: all;
+  
+  border: 1px solid black;
 }
 
 
@@ -190,14 +192,18 @@ li{
   max-height: 1000px;
 }
 
-#accbtn:hover{
-  filter: invert(200%);
+.img-btn:hover .drop-down li{
+  max-height: 1000px;
 }
 
-.drop-down{
+#accbtn:hover .acc-img{
+  filter: invert(50%);
+}
+
+.drop-down {
   position: absolute;
-  background-color: rgb(41,41,41);
-  border-color: black;
+  background-color: rgb(41, 41, 41);
+  border: 1px solid black;
   max-height: 0;
 }
 
@@ -209,13 +215,14 @@ li{
   font-family: 'Ubuntu', sans-serif;
   font-size: 25px;
   color: #7e7e7e;
-  padding: 5px, 20px, 5px, 20px;
+
 }
 
 .dropdown-txt:visited{
   color: #7e7e7e;
+
 }
 
 .drop-down li{
-
+  padding: 5px, 20px, 5px, 20px;
 }
