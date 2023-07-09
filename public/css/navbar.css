@@ -175,3 +175,37 @@ li{
 #accbtn{
   padding-right: 3rem;
 }
+
+.img-btn:hover .drop-down{
+  max-height: 1000px;
+}
+
+#accbtn:hover{
+  filter: invert(200%);
+}
+
+.drop-down{
+  position: absolute;
+  background-color: rgb(41,41,41);
+  border-color: black;
+  max-height: 0;
+}
+
+#accdrop{
+  transform: translate(-10px,88px);
+}
+
+.dropdown-txt{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 25px;
+  color: #7e7e7e;
+  padding: 5px, 20px, 5px, 20px;
+}
+
+.dropdown-txt:visited{
+  color: #7e7e7e;
+}
+
+.drop-down li{
+
+}
