@@ -89,27 +89,7 @@ li{
 .logo{
   max-width: 150px;
 }
-.acc-btn{
-  border: none;
-  background: none;
-  padding-right: 3rem;
-}
 
-.btn-img{
-  width: 25px;
-  border-radius: 50px;
-}
-
-.acc-img{
-  width: 28px;
-  filter: invert(40%);
-
-}
-
-.img-btn{
-  border: none;
-  background: none;
-}
 
 .directory-container{
   padding: 0px 20rem 0px 20rem;
@@ -170,4 +150,28 @@ li{
 #proddrop li{
   padding: 0;
   margin: 0;
+}
+
+/*---- Image Button Drop Downs----*/
+
+.btn-img{
+  width: 25px;
+  border-radius: 50px;
+}
+
+.acc-img{
+  width: 28px;
+  filter: invert(40%);
+
+}
+
+.img-btn{
+  border: none;
+  background: none;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+#accbtn{
+  padding-right: 3rem;
 }
