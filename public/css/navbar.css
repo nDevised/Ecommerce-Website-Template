@@ -148,9 +148,19 @@ li{
 }
 
 #proddrop li{
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
+
+#proddrop li:hover{
+  background-color: #525252;
+}
+
+#proddrop li:hover .prod-text{
+  color:white;
+}
+
+
 
 /*---- Image Button Drop Downs----*/
 
