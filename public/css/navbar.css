@@ -211,7 +211,7 @@ li{
 }
 
 #accdrop{
-  transform: translate(-25px,27px);
+  transform: translate(-35px,27px);
 }
 
 .dropdown-txt{
@@ -228,6 +228,10 @@ li{
 
 .drop-down li{
   text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 
 }
 
