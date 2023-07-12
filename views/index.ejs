@@ -18,6 +18,23 @@
             $("#navbar").replaceWith(data);
         });
     </script>
+    <div class="banner-wrapper">
+        <div class="banner-slideshow-container">
+            <div class="banner-slide">
+                <img src="/images/banner/0.webp" id = "img0"></img>
+                <div class="banner-caption" id="caption0">
+                    Caption Text
+                </div>
+                <!-- Add Javascript in the onclick section for changing the slide -->
+                <div class = "slide-chg-btn-container">
+                    <a class = "slide-chg-btn" id = "prevbtn" onclick=""><img class="banner-btn-img-chg" id="prevbannerbtn" src="/images/bannerarrowbtn.svg"></img></a>
+                    <a class = "slide-chg-btn" id = "nextbtn" onclick=""><img class="banner-btn-img-chg" id="nextbannerbtn" src="/images/bannerarrowbtn.svg"></img></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
 </body>

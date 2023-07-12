@@ -1,0 +1,27 @@
+/* Top banner*/
+.banner-wrapper{
+
+}
+
+.banner-slideshow-container{
+
+}
+
+.banner-slide{
+
+}
+
+.slide-chg-btn-container{
+
+}
+
+.banner-btn-img-chg{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+#prevbannerbtn{
+    /* flip the previouse button horizontally*/
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
