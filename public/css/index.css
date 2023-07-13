@@ -21,7 +21,8 @@ body {
 
 .slide-chg-btn-container{
     display:flex;
-    transform: translateY(-200px);
+    position:absolute;
+    margin: 0 0 1000% 0;
 }
 
 .banner-img {
