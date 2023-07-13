@@ -95,10 +95,6 @@ li{
   padding: 0px 20rem 0px 20rem;
 }
 
-.logo-container{
-
-}
-
 .right-container{
   display: flex;
 }
@@ -155,7 +151,7 @@ li{
 }
 
 #proddrop li:hover{
-  background-color: #9c8282;
+  background-color: #4d4d4d;
 }
 
 #proddrop li:hover .prod-text{
