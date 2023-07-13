@@ -22,7 +22,7 @@ nav{
   
 
   /* change to proper width to prevent navbar from strecthing*/
-  max-width: 700px;
+  max-width: 1800px;
 
 }
 
@@ -155,7 +155,7 @@ li{
 }
 
 #proddrop li:hover{
-  background-color: #525252;
+  background-color: #9c8282;
 }
 
 #proddrop li:hover .prod-text{
